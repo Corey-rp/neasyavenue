@@ -193,8 +193,21 @@
       .hero-subtitle { margin-bottom: 2rem; }
       .hero-image { order: 1; min-height: 400px; height: 400px; }
       .hero-badge { display: none; }
-      .hero-btns { flex-direction: column; align-items: stretch; gap: 0.75rem; position: relative; z-index: 1; }
-      .hero-btns .btn-primary, .hero-btns .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
+      .hero-btns { 
+        display: flex;
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 0.75rem; 
+        position: relative; 
+        z-index: 1;
+        width: 100%;
+      }
+      .hero-btns .btn-primary, .hero-btns .btn-ghost { 
+        width: 100%; 
+        justify-content: center; 
+        box-sizing: border-box;
+        display: flex;
+      }
       .home-featured { padding: 3rem 1.5rem; }
       .featured-grid {
         grid-template-columns: 1fr 1fr;

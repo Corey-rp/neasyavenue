@@ -314,5 +314,4 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   .footer-socials { justify-content: center; }
 
   .section-header { flex-direction: column; gap: 0.75rem; }
-  .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
 }
