@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Through Her Lens — About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 72px);
+    }
+
+    .about-image-col {
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+    }
+
+    .about-image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      background: linear-gradient(165deg, #E2D5C3, #CAAF8A);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--text-light);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 15px;
+    }
+
+    /* Replace with: <img src="images/portrait.jpg" alt="Portrait" style="width:100%;height:100%;object-fit:cover;"> */
+
+    .about-content {
+      padding: 6rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-quote {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--gold-muted);
+    }
+
+    .about-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-stat-num {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .about-stat-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-top: 6px;
+    }
+
+    /* GEAR SECTION */
+    .gear-section {
+      padding: 5rem;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .gear-card {
+      border: 1px solid var(--border);
+      padding: 2rem;
+      background: var(--cream);
+    }
+
+    .gear-icon {
+      font-size: 28px;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+
+    .gear-category {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .gear-name {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .gear-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">through <span>her</span> lens</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="vlogs.html">Vlogs</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="about-layout">
+  <div class="about-image-col">
+    <div class="about-image-placeholder">
+      <svg width="52" height="52" fill="none" viewBox="0 0 48 48">
+        <circle cx="24" cy="18" r="8" stroke="#A89070" stroke-width="1.5"/>
+        <path d="M8 42c0-8.84 7.16-16 16-16s16 7.16 16 16" stroke="#A89070" stroke-width="1.5"/>
+      </svg>
+      Your portrait photo here
+    </div>
+  </div>
+  <div class="about-content">
+    <div class="page-eyebrow" style="margin-bottom:1rem;">The story behind the lens</div>
+    <h1 style="font-family:var(--font-serif);font-size:46px;font-weight:300;line-height:1.15;margin-bottom:1.5rem;color:var(--text-dark);">
+      Hello, <em style="font-style:italic;color:var(--gold);">I'm</em><br/>a storyteller.
+    </h1>
+    <div class="about-quote">"I don't just take photos — I collect memories for the people who weren't there."</div>
+    <p class="about-text">I'm a travel photographer and filmmaker with a passion for capturing authentic moments across the globe. Every frame tells a story; every journey becomes a film.</p>
+    <p class="about-text">From the cobblestone streets of Paris to the sun-soaked coasts of Greece, I believe beauty is everywhere — you just have to look for the light.</p>
+    <div class="about-stats">
+      <div>
+        <div class="about-stat-num">32</div>
+        <div class="about-stat-label">Countries Visited</div>
+      </div>
+      <div>
+        <div class="about-stat-num">120+</div>
+        <div class="about-stat-label">Photos Published</div>
+      </div>
+      <div>
+        <div class="about-stat-num">24</div>
+        <div class="about-stat-label">Travel Films</div>
+      </div>
+    </div>
+    <a class="btn-primary" href="contact.html">Get In Touch &nbsp;→</a>
+  </div>
+</div>
+
+<section class="gear-section">
+  <div class="section-header">
+    <h2 class="section-title">My <em>Gear</em></h2>
+  </div>
+  <div class="gear-grid">
+    <div class="gear-card">
+      <div class="gear-icon">📷</div>
+      <div class="gear-category">Camera Body</div>
+      <div class="gear-name">Sony A7 IV</div>
+      <p class="gear-desc">My primary camera for all travel photography. The full-frame sensor delivers stunning detail in any light.</p>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">🎬</div>
+      <div class="gear-category">Video Camera</div>
+      <div class="gear-name">Sony ZV-E1</div>
+      <p class="gear-desc">Compact and cinematic. My go-to for all vlog footage — lightweight enough for long travel days.</p>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">🔭</div>
+      <div class="gear-category">Favorite Lens</div>
+      <div class="gear-name">35mm f/1.4</div>
+      <p class="gear-desc">My everyday lens. The wide aperture creates that dreamy background blur I love in portrait work.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="footer-logo" href="index.html">through <span>her</span> lens</a>
+  <div class="footer-text">© 2024 · All Rights Reserved</div>
+  <div class="footer-socials">
+    <a class="footer-social" href="#" title="Instagram">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="footer-social" href="#" title="YouTube">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 15,12 10,15" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>

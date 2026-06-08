@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Through Her Lens — Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .filter-bar {
+      padding: 1.5rem 5rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-right: 0.5rem;
+    }
+
+    .filter-btn {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+
+    .gallery-grid {
+      padding: 3rem 5rem;
+      columns: 3;
+      column-gap: 16px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--cream-dark);
+    }
+
+    .gallery-item-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-light);
+      transition: transform 0.4s ease;
+    }
+
+    /* To use real photos, replace .gallery-item-img with:
+       <img src="images/photo1.jpg" alt="Description" style="width:100%;display:block;"> */
+
+    .gallery-item:hover .gallery-item-img { transform: scale(1.03); }
+
+    .gallery-item:nth-child(1)  .gallery-item-img { background: linear-gradient(145deg, #D9CEBA, #C4AE8C); height: 320px; }
+    .gallery-item:nth-child(2)  .gallery-item-img { background: linear-gradient(145deg, #E0D5C5, #CBB898); height: 420px; }
+    .gallery-item:nth-child(3)  .gallery-item-img { background: linear-gradient(145deg, #D2C4B0, #BEA882); height: 280px; }
+    .gallery-item:nth-child(4)  .gallery-item-img { background: linear-gradient(145deg, #DDD0BC, #C8B490); height: 360px; }
+    .gallery-item:nth-child(5)  .gallery-item-img { background: linear-gradient(145deg, #CAB89E, #B8A27A); height: 300px; }
+    .gallery-item:nth-child(6)  .gallery-item-img { background: linear-gradient(145deg, #E2D6C4, #CEBC96); height: 390px; }
+    .gallery-item:nth-child(7)  .gallery-item-img { background: linear-gradient(145deg, #D5C9B5, #C0AA84); height: 340px; }
+    .gallery-item:nth-child(8)  .gallery-item-img { background: linear-gradient(145deg, #DECFC0, #C9B390); height: 290px; }
+    .gallery-item:nth-child(9)  .gallery-item-img { background: linear-gradient(145deg, #CFC1AD, #BAAA82); height: 370px; }
+
+    .gallery-item-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1rem 1.25rem;
+      background: linear-gradient(to top, rgba(42,31,14,0.75), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+    .gallery-item-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--cream);
+    }
+
+    .gallery-item-meta {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-top: 3px;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(42,31,14,0.92);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox-inner {
+      max-width: 80vw;
+      max-height: 85vh;
+      position: relative;
+      text-align: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-placeholder {
+      width: 700px;
+      max-width: 80vw;
+      height: 500px;
+      background: linear-gradient(145deg, #D9CEBA, #C4AE8C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--text-mid);
+      font-size: 16px;
+    }
+
+    .lightbox-caption {
+      margin-top: 1rem;
+      color: var(--cream);
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .lightbox-sub {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      margin-top: 4px;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 2rem; right: 2rem;
+      color: var(--cream);
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">through <span>her</span> lens</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="vlogs.html">Vlogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Portfolio</div>
+  <h1 class="page-title">Photo <em>Gallery</em></h1>
+  <p class="page-desc">A collection of moments frozen in light — from intimate portraits to sweeping landscapes around the world.</p>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="travel">Travel</button>
+  <button class="filter-btn" data-filter="portrait">Portrait</button>
+  <button class="filter-btn" data-filter="nature">Nature</button>
+  <button class="filter-btn" data-filter="architecture">Architecture</button>
+</div>
+
+<div class="gallery-grid">
+  <div class="gallery-item" data-category="travel" onclick="openLightbox('Golden Hour, Santorini', 'Travel · Greece')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Golden Hour, Santorini</div>
+      <div class="gallery-item-meta">Travel · Greece</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="nature" onclick="openLightbox('Morning Bloom', 'Nature · Japan')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Morning Bloom</div>
+      <div class="gallery-item-meta">Nature · Japan</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="portrait" onclick="openLightbox('The Quiet Street', 'Portrait · Paris')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">The Quiet Street</div>
+      <div class="gallery-item-meta">Portrait · Paris</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="travel" onclick="openLightbox('Azure Horizon', 'Travel · Amalfi Coast')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Azure Horizon</div>
+      <div class="gallery-item-meta">Travel · Amalfi Coast</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="nature" onclick="openLightbox('Canopy Light', 'Nature · Costa Rica')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Canopy Light</div>
+      <div class="gallery-item-meta">Nature · Costa Rica</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="architecture" onclick="openLightbox('Dusk in Marrakech', 'Architecture · Morocco')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Dusk in Marrakech</div>
+      <div class="gallery-item-meta">Architecture · Morocco</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="portrait" onclick="openLightbox('Soft Light', 'Portrait · Studio')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Soft Light</div>
+      <div class="gallery-item-meta">Portrait · Studio</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="travel" onclick="openLightbox('Seoul at Night', 'Travel · South Korea')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Seoul at Night</div>
+      <div class="gallery-item-meta">Travel · South Korea</div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="architecture" onclick="openLightbox('Pillars of Light', 'Architecture · Amsterdam')">
+    <div class="gallery-item-img">Your photo here</div>
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-title">Pillars of Light</div>
+      <div class="gallery-item-meta">Architecture · Amsterdam</div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-placeholder" id="lightbox-img">Your photo here</div>
+    <div class="lightbox-caption" id="lightbox-title"></div>
+    <div class="lightbox-sub" id="lightbox-sub"></div>
+  </div>
+</div>
+
+<footer>
+  <a class="footer-logo" href="index.html">through <span>her</span> lens</a>
+  <div class="footer-text">© 2024 · All Rights Reserved</div>
+  <div class="footer-socials">
+    <a class="footer-social" href="#" title="Instagram">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox
+  function openLightbox(title, sub) {
+    document.getElementById('lightbox-title').textContent = title;
+    document.getElementById('lightbox-sub').textContent = sub;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

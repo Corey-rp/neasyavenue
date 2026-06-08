@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Through Her Lens — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 72px);
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold-muted);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em { font-style: italic; color: var(--gold); }
+
+    .hero-subtitle {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 380px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; align-items: center; }
+
+    .hero-image {
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      background: linear-gradient(135deg, #E8DFCE 0%, #D4C4A8 40%, #C2AF8A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--text-light);
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    /* Replace .hero-image-placeholder with an <img> tag for your real photo:
+       <img src="images/hero.jpg" alt="Hero photo" style="width:100%;height:100%;object-fit:cover;"> */
+
+    .hero-badge {
+      position: absolute;
+      bottom: 2.5rem;
+      left: -1.5rem;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      width: 200px;
+      box-shadow: 0 8px 32px rgba(107,86,55,0.12);
+    }
+
+    .hero-badge-num {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero-badge-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-top: 4px;
+    }
+
+    /* FEATURED */
+    .home-featured {
+      padding: 6rem 5rem;
+      background: var(--white);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 12px;
+    }
+
+    .feat-card {
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .feat-card:first-child { grid-row: 1 / 3; }
+
+    .feat-card-img {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-light);
+      transition: transform 0.4s ease;
+    }
+
+    /* Replace .feat-card-img contents with:
+       <img src="images/photo1.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"> */
+
+    .feat-card:hover .feat-card-img { transform: scale(1.03); }
+    .feat-card:nth-child(1) .feat-card-img { background: linear-gradient(160deg, #D9CEBA, #C4AE8C); }
+    .feat-card:nth-child(2) .feat-card-img { background: linear-gradient(160deg, #E4D8C6, #CEB994); }
+    .feat-card:nth-child(3) .feat-card-img { background: linear-gradient(160deg, #C8BAA2, #B9A882); }
+    .feat-card:nth-child(4) .feat-card-img { background: linear-gradient(160deg, #DDD1BC, #C7B596); }
+    .feat-card:nth-child(5) .feat-card-img { background: linear-gradient(160deg, #D0C4AE, #BBA988); }
+
+    .feat-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.25rem;
+      background: linear-gradient(to top, rgba(42,31,14,0.7), transparent);
+      color: var(--cream);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feat-card:hover .feat-card-overlay { opacity: 1; }
+    .feat-card-overlay p { font-family: var(--font-serif); font-size: 15px; font-style: italic; }
+    .feat-card-overlay span { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); }
+
+    /* LATEST VLOG STRIP */
+    .latest-vlog {
+      padding: 5rem;
+      background: var(--cream);
+    }
+
+    .vlog-strip {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .vlog-strip-thumb {
+      position: relative;
+      background: linear-gradient(135deg, #E2D4BE, #C9AC80);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .vlog-play-btn {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .vlog-play-btn:hover { transform: scale(1.1); background: var(--gold); }
+
+    .vlog-strip-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .vlog-strip-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .vlog-strip-title em { font-style: italic; color: var(--gold); }
+
+    .vlog-strip-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">through <span>her</span> lens</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="vlogs.html">Vlogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Photography &amp; Travel</div>
+    <h1 class="hero-title">Capturing<br/><em>moments</em><br/>in time.</h1>
+    <p class="hero-subtitle">A curated journey through the world's most beautiful places — told through photography and film.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="gallery.html">View Gallery &nbsp;→</a>
+      <a class="btn-ghost" href="vlogs.html">Watch Vlogs</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <svg width="48" height="48" fill="none" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="10" stroke="#A89070" stroke-width="1.5"/>
+        <rect x="8" y="14" width="32" height="22" rx="2" stroke="#A89070" stroke-width="1.5"/>
+        <circle cx="36" cy="18" r="2" fill="#A89070"/>
+      </svg>
+      Your hero photo here
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">120+</div>
+      <div class="hero-badge-label">Photos Published</div>
+    </div>
+  </div>
+</section>
+
+<section class="home-featured">
+  <div class="section-header">
+    <h2 class="section-title">Recent <em>Work</em></h2>
+    <a class="section-link" href="gallery.html">View All &nbsp;→</a>
+  </div>
+  <div class="featured-grid">
+    <div class="feat-card">
+      <div class="feat-card-img">Your photo here</div>
+      <div class="feat-card-overlay"><p>Golden Hour, Santorini</p><span>Travel · 2024</span></div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-img">Your photo here</div>
+      <div class="feat-card-overlay"><p>Morning Bloom</p><span>Nature · 2024</span></div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-img">Your photo here</div>
+      <div class="feat-card-overlay"><p>The Quiet Street</p><span>Portrait · 2024</span></div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-img">Your photo here</div>
+      <div class="feat-card-overlay"><p>Azure Horizon</p><span>Travel · 2024</span></div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-img">Your photo here</div>
+      <div class="feat-card-overlay"><p>Dusk &amp; Light</p><span>Landscape · 2024</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="latest-vlog">
+  <div class="section-header">
+    <h2 class="section-title">Latest <em>Vlog</em></h2>
+    <a class="section-link" href="vlogs.html">All Vlogs &nbsp;→</a>
+  </div>
+  <div class="vlog-strip">
+    <div class="vlog-strip-thumb">
+      <div class="vlog-play-btn">▶</div>
+    </div>
+    <div>
+      <div class="vlog-strip-tag">Europe · June 2024</div>
+      <h3 class="vlog-strip-title">48 Hours in <em>Santorini</em> — A Summer Dream</h3>
+      <p class="vlog-strip-text">Sunsets, cliffside tavernas, and the bluest water you've ever seen. Here's everything we did in two magical days on the most romantic island in Greece.</p>
+      <a class="btn-primary" href="vlogs.html">Watch Now &nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="footer-logo" href="index.html">through <span>her</span> lens</a>
+  <div class="footer-text">© 2024 · All Rights Reserved</div>
+  <div class="footer-socials">
+    <a class="footer-social" href="#" title="Instagram">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="footer-social" href="#" title="YouTube">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 15,12 10,15" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="footer-social" href="#" title="Pinterest">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 7c-2.76 0-5 2.24-5 5 0 2.12 1.3 3.93 3.16 4.69-.04-.37-.08-.93.02-1.34l.52-2.19s-.13-.27-.13-.67c0-.62.36-1.09.81-1.09.38 0 .57.29.57.63 0 .38-.24.96-.37 1.49-.1.44.22.8.66.8.79 0 1.4-.83 1.4-2.04 0-1.06-.77-1.81-1.86-1.81-1.26 0-2.01.95-2.01 1.93 0 .38.15.79.33 1.01a.13.13 0 0 1 .03.13l-.12.5c-.02.08-.07.1-.15.06-.56-.26-.91-.1-1.14 1.47-.23.16-.5.25-.78.25-.83 0-1.5-1.04-1.5-2.32 0-1.91 1.39-3.67 4.02-3.67 2.11 0 3.75 1.5 3.75 3.51 0 2.09-1.32 3.77-3.14 3.77-.61 0-1.19-.32-1.39-.69l-.38 1.41c-.14.52-.51 1.18-.76 1.57.57.18 1.18.27 1.8.27 2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
