@@ -23,7 +23,7 @@ body {
   background: var(--cream);
   color: var(--text-dark);
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   min-height: 100vh;
 }
 
@@ -151,8 +151,8 @@ nav {
 
 .page-desc {
   font-size: 15px;
-  font-weight: 300;
-  color: var(--text-mid);
+  font-weight: 400;
+  color: var(--text-dark);
   max-width: 480px;
   margin-top: 1rem;
   line-height: 1.8;
@@ -241,7 +241,7 @@ footer {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-mid);
+  color: var(--text-dark);
   margin-bottom: 8px;
 }
 
