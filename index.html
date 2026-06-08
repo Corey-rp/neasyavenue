@@ -128,17 +128,17 @@
     .feat-card:hover .feat-card-overlay { opacity: 1; }
     .feat-card-overlay p { font-family: var(--font-serif); font-size: 15px; font-style: italic; }
     .feat-card-overlay span { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); }
-    .latest-vlog { padding: 4rem 5rem; background: var(--cream); }
+    .latest-vlog { padding: 4rem 5rem 0; background: var(--cream); }
     .vlog-strip {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      align-items: center;
+      align-items: stretch;
       margin-top: 2rem;
     }
     .vlog-strip-thumb {
       position: relative;
-      height: 300px;
+      min-height: 420px;
       overflow: hidden;
     }
     .vlog-strip-thumb img {
