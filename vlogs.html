@@ -214,6 +214,40 @@
       line-height: 1.8;
       margin-bottom: 1.5rem;
     }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1.5rem 2rem; }
+      .page-title { font-size: 34px; }
+
+      /* Featured vlog - full single column */
+      .vlog-featured { padding: 1.5rem 1.5rem 0; }
+      .vlog-featured-inner {
+        display: block;
+        border: 1px solid var(--border);
+        background: var(--white);
+        overflow: hidden;
+      }
+      .vlog-featured-thumb { height: 220px; width: 100%; display: block; }
+      .vlog-featured-body { padding: 1.5rem; display: block; }
+      .featured-badge { margin-bottom: 0.75rem; }
+      .featured-title { font-size: 22px; line-height: 1.3; margin-bottom: 0.75rem; }
+      .featured-text { font-size: 13px; margin-bottom: 1rem; }
+      .featured-text + .btn-primary { width: 100%; justify-content: center; }
+
+      /* Vlog cards - single column, full width */
+      .vlog-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 20px;
+      }
+      .vlog-card { width: 100%; }
+      .vlog-thumb { height: 200px; }
+      .vlog-title { font-size: 18px; }
+      .vlog-body { padding: 1rem; }
+      .vlog-excerpt { font-size: 13px; }
+      .vlog-tags { flex-wrap: wrap; }
+      .vlog-footer { flex-direction: row; align-items: center; }
+    }
   </style>
 </head>
 <body>
