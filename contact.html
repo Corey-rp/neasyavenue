@@ -242,6 +242,10 @@
     <p class="form-subtitle">I typically respond within 24–48 hours.</p>
 
     <form action="https://formspree.io/f/mwvjgwge" method="POST">
+      <input type="hidden" name="_next" value="https://neasyavenue.com/contact.html?sent=true"/>
+      <div class="form-success" id="form-success" style="display:none;">
+        ✓ &nbsp; Thank you! Your message has been sent. I'll be in touch soon.
+      </div>
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label">First Name</label>
@@ -320,5 +324,11 @@
   }
 </script>
 
+<script>
+  if (window.location.search.includes('sent=true')) {
+    document.getElementById('form-success').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
