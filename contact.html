@@ -241,35 +241,33 @@
     <h2 class="form-title">Send a <em>Message</em></h2>
     <p class="form-subtitle">I typically respond within 24–48 hours.</p>
 
-    <div class="form-success" id="form-success">
-      ✓ &nbsp; Thank you! Your message has been sent. I'll be in touch soon.
-    </div>
-
-    <div class="form-grid">
-      <div class="form-group">
-        <label class="form-label">First Name</label>
-        <input class="form-input" type="text" id="fname" name="first_name" placeholder="Jane"/>
+    <form action="https://formspree.io/f/mwvjgwge" method="POST">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" name="first_name" placeholder="Jane"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" name="last_name" placeholder="Doe"/>
+        </div>
       </div>
       <div class="form-group">
-        <label class="form-label">Last Name</label>
-        <input class="form-input" type="text" id="lname" name="last_name" placeholder="Doe"/>
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" name="email" placeholder="jane@example.com" required/>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Email Address</label>
-      <input class="form-input" type="email" id="email" name="email" placeholder="jane@example.com"/>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Subject</label>
-      <input class="form-input" type="text" id="subject" name="subject" placeholder="Collaboration / Booking / Other"/>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Message</label>
-      <textarea class="form-input" id="message" name="message" placeholder="Tell me about your project or trip idea..."></textarea>
-    </div>
-    <button class="btn-primary" style="width:100%;justify-content:center;" onclick="submitForm()">
-      Send Message &nbsp;→
-    </button>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input class="form-input" type="text" name="subject" placeholder="Collaboration / Booking / Other"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-input" name="message" placeholder="Tell me about your project or trip idea..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+        Send Message &nbsp;→
+      </button>
+    </form>
   </div>
 </div>
 
