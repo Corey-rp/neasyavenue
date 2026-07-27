@@ -46,11 +46,14 @@
       column-gap: 16px;
     }
     .gallery-item {
+      display: block;
       break-inside: avoid;
       margin-bottom: 16px;
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
     .gallery-item img {
       width: 100%;
@@ -82,57 +85,6 @@
       color: var(--gold-light);
       margin-top: 3px;
     }
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(42,31,14,0.93);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox-inner {
-      max-width: 80vw;
-      max-height: 90vh;
-      position: relative;
-      text-align: center;
-    }
-    .lightbox-inner img {
-      max-width: 100%;
-      max-height: 78vh;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-    .lightbox-caption {
-      margin-top: 1rem;
-      color: var(--cream);
-      font-family: var(--font-serif);
-      font-size: 18px;
-      font-style: italic;
-    }
-    .lightbox-sub {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-muted);
-      margin-top: 4px;
-    }
-    .lightbox-close {
-      position: fixed;
-      top: 2rem; right: 2rem;
-      color: var(--cream);
-      font-size: 32px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      line-height: 1;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-    .lightbox-close:hover { opacity: 1; }
     @media (max-width: 768px) {
       .page-hero { padding: 3rem 1.5rem 2rem; }
       .page-title { font-size: 36px; }
@@ -154,7 +106,6 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="gallery.html" class="active">Gallery</a></li>
-    <li><a href="vlogs.html">Vlogs</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -175,58 +126,48 @@
 </div>
 
 <div class="gallery-grid">
-  <div class="gallery-item" data-category="portrait" onclick="openLightbox('images/roselyn-shoot.jpeg','Roselyn','Portrait · Natural Light')">
+  <a class="gallery-item" data-category="portrait" href="https://adobe.ly/3GYYn3X" target="_blank" rel="noopener">
     <img src="images/roselyn-shoot.jpeg" alt="Roselyn"/>
     <div class="gallery-item-overlay">
       <div class="gallery-item-title">Roselyn</div>
       <div class="gallery-item-meta">Portrait · Natural Light</div>
     </div>
-  </div>
-  <div class="gallery-item" data-category="portrait" onclick="openLightbox('images/destiny-sixteen.jpeg','Destiny','Portrait · White Dress')">
+  </a>
+  <a class="gallery-item" data-category="portrait" href="https://adobe.ly/4ucj5Re" target="_blank" rel="noopener">
     <img src="images/destiny-sixteen.jpeg" alt="Destiny"/>
     <div class="gallery-item-overlay">
       <div class="gallery-item-title">Destiny</div>
       <div class="gallery-item-meta">Portrait · White Dress</div>
     </div>
-  </div>
-  <div class="gallery-item" data-category="portrait" onclick="openLightbox('images/zakiyah-shoot.jpeg','Zakiyah','Portrait · Editorial')">
+  </a>
+  <a class="gallery-item" data-category="portrait" href="https://lightroom.adobe.com/shares/b16ebd02dd6743e99f6dbc47e1809978" target="_blank" rel="noopener">
     <img src="images/zakiyah-shoot.jpeg" alt="Zakiyah"/>
     <div class="gallery-item-overlay">
       <div class="gallery-item-title">Zakiyah</div>
       <div class="gallery-item-meta">Portrait · Editorial</div>
     </div>
-  </div>
-  <div class="gallery-item" data-category="milestone" onclick="openLightbox('images/Nwannae-grad-shoot.jpeg','Nwanne\'s Grad Shoot','Milestone · Graduation')">
+  </a>
+  <a class="gallery-item" data-category="milestone" href="https://adobe.ly/4nUAlIC" target="_blank" rel="noopener">
     <img src="images/Nwannae-grad-shoot.jpeg" alt="Nwanne grad shoot"/>
     <div class="gallery-item-overlay">
       <div class="gallery-item-title">Nwanne's Grad Shoot</div>
       <div class="gallery-item-meta">Milestone · Graduation</div>
     </div>
-  </div>
-  <div class="gallery-item" data-category="couples" onclick="openLightbox('images/donyae-justin-elobment.jpeg','Donyae & Justin','Couples · Elopement')">
+  </a>
+  <a class="gallery-item" data-category="couples" href="https://lightroom.adobe.com/shares/12450b5d77da4dbd9158dd4caad2888e" target="_blank" rel="noopener">
     <img src="images/donyae-justin-elobment.jpeg" alt="Donyae and Justin"/>
     <div class="gallery-item-overlay">
       <div class="gallery-item-title">Donyae &amp; Justin</div>
       <div class="gallery-item-meta">Couples · Elopement</div>
     </div>
-  </div>
-  <div class="gallery-item" data-category="milestone" onclick="openLightbox('images/tyreka-chapter.jpeg','Tyreka','Milestone · Night Portrait')">
+  </a>
+  <a class="gallery-item" data-category="milestone" href="https://lightroom.adobe.com/shares/50a272e343a84ee3898698eca860e5b6" target="_blank" rel="noopener">
     <img src="images/tyreka-chapter.jpeg" alt="Tyreka chapter"/>
     <div class="gallery-item-overlay">
       <div class="gallery-item-title">Tyreka</div>
       <div class="gallery-item-meta">Milestone · Night Portrait</div>
     </div>
-  </div>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-  <div class="lightbox-inner">
-    <img id="lightbox-img" src="" alt=""/>
-    <div class="lightbox-caption" id="lightbox-title"></div>
-    <div class="lightbox-sub" id="lightbox-sub"></div>
-  </div>
+  </a>
 </div>
 
 <footer>
@@ -253,23 +194,6 @@
       });
     });
   });
-
-  function openLightbox(src, title, sub) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox-title').textContent = title;
-    document.getElementById('lightbox-sub').textContent = sub;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox(e) {
-    if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>

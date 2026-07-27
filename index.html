@@ -153,22 +153,6 @@
       object-fit: cover;
       object-position: center top;
     }
-    .vlog-play-btn {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: rgba(201,168,76,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 22px;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
-    }
-    .vlog-play-btn:hover { transform: translate(-50%,-50%) scale(1.1); background: var(--gold); }
     .vlog-strip-tag {
       font-size: 10px;
       letter-spacing: 0.2em;
@@ -245,7 +229,6 @@
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="vlogs.html">Vlogs</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -301,19 +284,18 @@
 
 <section class="latest-vlog">
   <div class="section-header">
-    <h2 class="section-title">Latest <em>Content</em></h2>
-    <a class="section-link" href="vlogs.html">All Videos &nbsp;→</a>
+    <h2 class="section-title">Featured <em>Shoot</em></h2>
+    <a class="section-link" href="gallery.html">View Gallery &nbsp;→</a>
   </div>
   <div class="vlog-strip">
     <div class="vlog-strip-thumb">
-      <img src="images/Nwannae-grad-shoot.jpeg" alt="Latest video thumbnail"/>
-      <div class="vlog-play-btn">▶</div>
+      <img src="images/Nwannae-grad-shoot.jpeg" alt="Nwanne's graduation shoot"/>
     </div>
     <div>
       <div class="vlog-strip-tag">Behind the Lens</div>
       <h3 class="vlog-strip-title">Nwanne's <em>Graduation</em> Shoot</h3>
-      <p class="vlog-strip-text">A milestone worth celebrating — follow along as we capture Nwanne's graduation shoot on location. Architecture, natural light, and a whole lot of joy.</p>
-      <a class="btn-primary" href="vlogs.html">Watch Now &nbsp;→</a>
+      <p class="vlog-strip-text">A milestone worth celebrating — captured on location with architecture, natural light, and a whole lot of joy.</p>
+      <a class="btn-primary" href="gallery.html">View Gallery &nbsp;→</a>
     </div>
   </div>
 </section>
