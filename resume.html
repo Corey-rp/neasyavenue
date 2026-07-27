@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neasy Avenue | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .resume-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 5rem 6rem;
+    }
+    .resume-download-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .resume-contact {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .resume-embed {
+      margin-bottom: 3rem;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: 0 8px 32px rgba(107,86,55,0.08);
+    }
+    .resume-embed iframe {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      display: block;
+    }
+    .resume-section { margin-bottom: 3rem; }
+    .resume-section-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .resume-summary {
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 1.9;
+    }
+    .resume-entry { margin-bottom: 2rem; }
+    .resume-entry:last-child { margin-bottom: 0; }
+    .resume-entry-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .resume-entry-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+    .resume-entry-title span {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-mid);
+    }
+    .resume-entry-date {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .resume-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .resume-list li {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+    .resume-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold-muted);
+    }
+    .resume-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2.5rem;
+    }
+    .resume-skill-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .resume-skill-value {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .resume-additional p {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.9;
+    }
+    @media (max-width: 768px) {
+      .resume-wrap { padding: 2.5rem 1.5rem 4rem; }
+      .resume-skills-grid { grid-template-columns: 1fr; }
+      .resume-entry-header { flex-direction: column; align-items: flex-start; }
+      .resume-embed iframe { height: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">neasy <span>avenue</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html" class="active">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Behind the Business</div>
+  <h1 class="page-title">My <em>Resume</em></h1>
+  <p class="page-desc">A look at the experience, training, and skills behind every shoot.</p>
+</div>
+
+<div class="resume-wrap">
+  <div class="resume-download-bar">
+    <div class="resume-contact">
+      Fayetteville, GA &nbsp;·&nbsp; 678.754.5578 &nbsp;·&nbsp; arnelledickens@gmail.com &nbsp;·&nbsp; neasyavenue.com
+    </div>
+    <a class="btn-primary" href="files/Arnelle-Dickens-Resume.pdf" download>Download Resume &nbsp;→</a>
+  </div>
+
+  <div class="resume-embed">
+    <iframe src="files/Arnelle-Dickens-Resume.pdf" title="Arnelle Dickens Resume" loading="lazy"></iframe>
+  </div>
+
+  <div class="resume-section">
+    <h2 class="resume-section-title">Summary</h2>
+    <p class="resume-summary">Film and Media student at Georgia State University with 2+ years of hands-on videography and photography experience across corporate events, private celebrations, and social media content. Skilled in full-cycle production — from camera operation and lighting setup through post-production editing in Adobe Premiere Pro, Lightroom, and Photoshop. Delivers polished, on-brand visual content with a strong eye for composition, color accuracy, and storytelling. Bilingual in English and Haitian Creole.</p>
+  </div>
+
+  <div class="resume-section">
+    <h2 class="resume-section-title">Experience</h2>
+
+    <div class="resume-entry">
+      <div class="resume-entry-header">
+        <div class="resume-entry-title">Videographer <span>· Artistic P · Atlanta, GA</span></div>
+        <div class="resume-entry-date">Aug. 2023 – Present</div>
+      </div>
+      <ul class="resume-list">
+        <li>Shoot and deliver high-quality video content for 4+ events per month, including corporate functions, private celebrations, and social gatherings.</li>
+        <li>Manage all aspects of production independently — equipment setup/breakdown, lighting adjustment, and real-time camera operation — ensuring consistent quality under tight timelines.</li>
+        <li>Collaborate directly with clients to understand event vision and adapt coverage style, resulting in repeat bookings and referrals.</li>
+        <li>Maintain and transport professional camera and lighting equipment across Atlanta-area venues.</li>
+      </ul>
+    </div>
+
+    <div class="resume-entry">
+      <div class="resume-entry-header">
+        <div class="resume-entry-title">360 Video Booth Attendant <span>· Creative Expressions ATL · Atlanta, GA</span></div>
+        <div class="resume-entry-date">Aug. 2023 – Present</div>
+      </div>
+      <ul class="resume-list">
+        <li>Operate and manage a 360-degree video booth at live events, handling full setup, smooth operation, and breakdown for each activation.</li>
+        <li>Deliver a high-quality guest experience by troubleshooting technical issues on the spot and maintaining consistent video output in fast-paced environments.</li>
+        <li>Coordinate workflow and timing with event staff to ensure seamless booth integration into event programming.</li>
+      </ul>
+    </div>
+
+    <div class="resume-entry">
+      <div class="resume-entry-header">
+        <div class="resume-entry-title">Freelance Photographer <span>· Self-Employed · Fayetteville, GA</span></div>
+        <div class="resume-entry-date">Apr. 2025 – Present</div>
+      </div>
+      <ul class="resume-list">
+        <li>Build and manage an independent photography client base, handling client consultations, session planning, shooting, and final delivery.</li>
+        <li>Capture portraits, lifestyle, and branded content with a strong focus on composition, lighting, and color accuracy.</li>
+        <li>Edit and deliver polished final images using professional color grading workflows in Adobe Lightroom and Photoshop.</li>
+        <li>Maintain active social media presence on Instagram and TikTok under brand @neasyavenue to attract clients and showcase work.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2 class="resume-section-title">Education</h2>
+    <div class="resume-entry">
+      <div class="resume-entry-header">
+        <div class="resume-entry-title">Bachelor of Arts in Film and Media <span>· Georgia State University · Atlanta, GA</span></div>
+        <div class="resume-entry-date">Expected Dec. 2026</div>
+      </div>
+      <ul class="resume-list">
+        <li>GPA: 3.4</li>
+        <li>Minor: Georgia Film Academy Certification (In Progress)</li>
+        <li>Relevant coursework: Film production, cinematography, media storytelling, post-production editing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2 class="resume-section-title">Technical Skills</h2>
+    <div class="resume-skills-grid">
+      <div>
+        <div class="resume-skill-label">Camera Operation</div>
+        <div class="resume-skill-value">DSLR and mirrorless systems; lighting setup and exposure control; on-location and studio production</div>
+      </div>
+      <div>
+        <div class="resume-skill-label">Video Editing</div>
+        <div class="resume-skill-value">Adobe Premiere Pro, CapCut, Adobe Rush</div>
+      </div>
+      <div>
+        <div class="resume-skill-label">Photo Editing</div>
+        <div class="resume-skill-value">Adobe Lightroom (color grading), Adobe Photoshop</div>
+      </div>
+      <div>
+        <div class="resume-skill-label">Content Creation</div>
+        <div class="resume-skill-value">Video concept development, creative pitching, social media content strategy (Instagram, TikTok)</div>
+      </div>
+      <div>
+        <div class="resume-skill-label">Production Skills</div>
+        <div class="resume-skill-value">Event coverage, 360-degree video booth operation, equipment management, client collaboration</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="resume-section resume-additional">
+    <h2 class="resume-section-title">Additional</h2>
+    <p>Languages: Fluent in English; conversational in Haitian Creole</p>
+    <p>American Red Cross First Aid / CPR / AED Certified — valid through July 2027</p>
+  </div>
+</div>
+
+<footer>
+  <a class="footer-logo" href="index.html">neasy <span>avenue</span></a>
+  <div class="footer-text">© 2024 · Arnelle Dickens · All Rights Reserved</div>
+  <div class="footer-socials">
+    <a class="footer-social" href="https://instagram.com/neasyavenue" title="Instagram" target="_blank">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="footer-social" href="https://tiktok.com/@neasyavenue" title="TikTok" target="_blank">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
